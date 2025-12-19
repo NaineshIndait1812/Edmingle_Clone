@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="edmingle-styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="./assets/edmingle-logo.png" alt="Edmingle">
+    </div>
+    <nav class="nav-menu">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#blog">Blog</a>
+      <a href="#login">Login</a>
+    </nav>
+    <div class="nav-buttons">
+      <button class="btn-trial">Start Free Trial</button>
+      <button class="btn-demo">Book a Demo</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1>
+        <span class="highlight" id="typewriter">Scale</span> your training business<br>
+        with <span class="yellow">ZERO operational hassles
+      </h1>
+      <p>
+        Deliver training programs, convert insights into profit, and build<br>
+        lasting learner loyalty—all under your brand.
+
+      </p>
+      <br>
+      <button class="btn-demo-large">Book a Demo</button>
+      
+      <div class="rating">
+        <span>RATED</span>
+        <div class="stars">★★★★☆</div>
+        <span>(4.8+)</span>
+      </div>
+      
+      <div class="rating-logos">
+        <img src="./assets/g2-logo.png" alt="G2">
+        <img src="./assets/capterra-logo.png" alt="Capterra">
+        <img src="./assets/software-suggest-logo.png" alt="Software Suggest">
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img src="./assets/hero-woman.png" alt="Professional woman with dashboard">
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats">
+  <div class="stats-container">
+    <div class="stat-item">
+      <span class="stat-number">5000+</span>
+      <span class="stat-text">Training Businesses</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat-item">
+      <span class="stat-number blue">Serving More Than 5.5M Students</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat-item">
+      <span class="stat-number">Across 160+ Countries</span>
+    </div>
+  </div>
+  
+  <div class="client-logos">
+    <img src="./assets/college-dekho.png" alt="CollegeDekho">
+    <img src="./assets/ints.png" alt="INTS">
+    <img src="./assets/mcgraw-hill.png" alt="McGraw Hill">
+    <img src="./assets/iskcon.png" alt="ISKCON">
+    <img src="./assets/aditya-birla.png" alt="Aditya Birla">
+    <img src="./assets/learnbay.png" alt="Learnbay">
+    <img src="./assets/lawsikho.png" alt="LawSikho">
+  </div>
+</section>
+
+<script>
+// Typewriter Effect
+document.addEventListener('DOMContentLoaded', function() {
+  const typewriterElement = document.getElementById('typewriter');
+  const words = ['Scale', 'Manage', 'Build'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  
+  function typeWriter() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+      typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 100 : 200;
+    
+    if (!isDeleting && charIndex === currentWord.length) {
+      typeSpeed = 3000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+    
+    setTimeout(typeWriter, typeSpeed);
+  }
+  
+  typeWriter();
+});
+</script>
+
+</body>
+</html>

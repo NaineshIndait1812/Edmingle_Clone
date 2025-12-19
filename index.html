@@ -11,7 +11,9 @@
 <header class="header">
   <!-- TOP CENTER LOGO -->
 <div class="top-logo">
-  <img src="./assets/imageLMS.png" alt="LMS Logo">
+  <a href="edmingle-page.html">
+    <img src="./assets/imageLMS.png" alt="LMS Logo" style="cursor: pointer;">
+  </a>
 </div>
 
 </header>
@@ -487,6 +489,34 @@
 </footer>
 
 
+
+<script>
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const chevron = this.querySelector('.chevron');
+      
+      // Toggle current FAQ only
+      if (faqItem.classList.contains('active')) {
+        // Close this FAQ
+        faqItem.classList.remove('active');
+        chevron.style.transform = 'rotate(0deg)';
+        answer.style.maxHeight = '0';
+      } else {
+        // Open this FAQ
+        faqItem.classList.add('active');
+        chevron.style.transform = 'rotate(180deg)';
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>
