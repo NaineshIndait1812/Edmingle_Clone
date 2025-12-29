@@ -12,7 +12,7 @@
   <!-- TOP CENTER LOGO -->
 <div class="top-logo">
   <a href="edmingle-page.html">
-    <img src="./assets/imageLMS.png" alt="LMS Logo" style="cursor: pointer;">
+    <img src="./assets/edmingle-logo.png" alt="LMS Logo" style="cursor: pointer;">
   </a>
 </div>
 
@@ -516,6 +516,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+<script>
+  // Hamburger Menu Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  const closeBtn = document.querySelector('.close-btn');
+  const navLinks = document.querySelectorAll('.nav-menu a');
+
+  // Open menu
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  }
+
+  // Close menu when close button is clicked
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  }
+
+  // Close menu when a nav link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
 </script>
 
 </body>
