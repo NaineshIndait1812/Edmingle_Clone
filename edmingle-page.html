@@ -23,7 +23,7 @@
     
     <nav class="nav-menu" id="navMenu">
       <button class="close-btn" id="closeBtn">×</button>
-      <a href="#features">Features</a>
+      <a href="features.html">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="#blog">Blog</a>
@@ -66,7 +66,7 @@
       <div class="rating-logos">
         <img src="./assets/c2.png" alt="G2">
         <img src="./assets/y6.png" alt="Capterra">
-        <img src="./assets/SoftwareSuggest.png" alt="Software Suggest">
+        <img src="./assets/software_suggest.png" alt="Software Suggest">
       </div>
     </div>
     
@@ -641,5 +641,27 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
+<script>
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const closeBtn = document.getElementById('closeBtn');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  navMenu.classList.remove('active');
+});
+
+// Close menu when clicking on a link
+const navLinks = navMenu.querySelectorAll('a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+</script>
 </body>
 </html>
